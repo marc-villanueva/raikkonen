@@ -1,0 +1,23 @@
+[
+	{
+		"name": "UCSD Rady 5K Run/Walk",
+		"start": "2013-11-21T00:00:00",
+		"end": "2013-11-21T00:00:00",
+		"description": "We are MBA students at UCSD Rady School of Management, please join us to raise money and awareness to promote health and wellness in the children of our local community. We are committed to promoting a healthy lifestyle through exercise and nutrition.",
+		"image": "http://www.active.com/Assets/Running/Running5+300x225.jpg"
+	},
+	{
+		"name": "Finish Chelsea's Run 5K Run & Walk",
+		"start": "2013-11-22T00:00:00",
+		"end": "2013-11-22T00:00:00",
+		"description": "Finish Chelsea's Run is a 5K run/walk (and new this year, a Short & Sweet route option for those not up for the full 3.1 miles - see below for more information) followed by a family festival, children's activities, refreshments & entertainment.",
+		"image": "http://www.active.com/Assets/Generic/Generic+Running+300x225/5.jpg"
+	},
+	{
+		"name": "Father Joe's Villages Thanksgiving Day 5K",
+		"start": "2013-11-23T00:00:00",
+		"end": "2013-11-23T00:00:00",
+		"description": "Join us and 10,000 of our closest friends and family in Balboa Park for the 12th annual Father Joe’s Villages Thanksgiving Day 5K!",
+		"image": "http://www.active.com/Assets/Running/Langley+Festival+240x240.jpg"
+	}	
+]
