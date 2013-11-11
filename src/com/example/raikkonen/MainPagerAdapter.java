@@ -2,6 +2,7 @@ package com.example.raikkonen;
 
 import java.util.Locale;
 
+import android.location.Location;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
@@ -23,8 +24,11 @@ public class MainPagerAdapter extends FragmentPagerAdapter {
 		case 0:
 			fragment = new EventListFragment();
 			Bundle args = new Bundle();
-			args.putDouble("latitude", activity.getLocation().getLatitude());
-			args.putDouble("longitude", activity.getLocation().getLongitude());
+			Location location = activity.getLocation();
+			if (location != null) {
+				args.putDouble("latitude", activity.getLocation().getLatitude());
+				args.putDouble("longitude", activity.getLocation().getLongitude());
+			}
 			fragment.setArguments(args);
 			break;
 		case 1:
@@ -39,7 +43,8 @@ public class MainPagerAdapter extends FragmentPagerAdapter {
 
 	@Override
 	public int getCount() {
-		return 3;
+		//return 3;
+		return 1;
 	}
 
 	@Override
