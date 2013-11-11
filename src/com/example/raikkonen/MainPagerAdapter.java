@@ -2,17 +2,17 @@ package com.example.raikkonen;
 
 import java.util.Locale;
 
-import android.content.Context;
+import android.os.Bundle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 
 public class MainPagerAdapter extends FragmentPagerAdapter {
-	private Context context;
+	private MainActivity activity;
 
-	public MainPagerAdapter(FragmentManager fm, Context context) {
+	public MainPagerAdapter(FragmentManager fm, MainActivity activity) {
 		super(fm);
-		this.context = context;
+		this.activity = activity;
 	}
 
 	@Override
@@ -22,6 +22,10 @@ public class MainPagerAdapter extends FragmentPagerAdapter {
 		switch (position) {
 		case 0:
 			fragment = new EventListFragment();
+			Bundle args = new Bundle();
+			args.putDouble("latitude", activity.getLocation().getLatitude());
+			args.putDouble("longitude", activity.getLocation().getLongitude());
+			fragment.setArguments(args);
 			break;
 		case 1:
 			fragment = new EventListFragment();
@@ -44,13 +48,13 @@ public class MainPagerAdapter extends FragmentPagerAdapter {
 		Locale l = Locale.getDefault();
 		switch (position) {
 		case 0:
-			title = context.getString(R.string.title_section1).toUpperCase(l);
+			title = activity.getString(R.string.title_section1).toUpperCase(l);
 			break;
 		case 1:
-			title = context.getString(R.string.title_section2).toUpperCase(l);
+			title = activity.getString(R.string.title_section2).toUpperCase(l);
 			break;
 		case 2:
-			title = context.getString(R.string.title_section3).toUpperCase(l);
+			title = activity.getString(R.string.title_section3).toUpperCase(l);
 			break;
 		}
 		return title;

@@ -1,11 +1,12 @@
 package com.example.raikkonen.model;
 
 import java.lang.reflect.Type;
-import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
-import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
 import com.google.gson.reflect.TypeToken;
+
 
 public class EventRepository {
 
@@ -28,7 +29,7 @@ public class EventRepository {
 	}
 
 	private List<Event> createListFromJson(String json) {
-		Type listType = new TypeToken<ArrayList<Event>>() {}.getType();
-        return new Gson().fromJson(json, listType);
+		Type listType = new TypeToken<List<Event>>() {}.getType();
+        return new GsonBuilder().registerTypeAdapter(Date.class, new JsonDateDeserializer()).create().fromJson(json, listType);
 	}
 }

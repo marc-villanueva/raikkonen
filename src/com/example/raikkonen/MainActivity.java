@@ -2,6 +2,10 @@ package com.example.raikkonen;
 
 import android.app.ActionBar;
 import android.app.FragmentTransaction;
+import android.content.Context;
+import android.location.Criteria;
+import android.location.Location;
+import android.location.LocationManager;
 import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.view.ViewPager;
@@ -19,6 +23,7 @@ public class MainActivity extends FragmentActivity implements ActionBar.TabListe
 	 * {@link android.support.v4.app.FragmentStatePagerAdapter}.
 	 */
 	MainPagerAdapter mainPagerAdapter;
+	LocationManager locationManager;
 
 	/**
 	 * The {@link ViewPager} that will host the section contents.
@@ -37,7 +42,7 @@ public class MainActivity extends FragmentActivity implements ActionBar.TabListe
 
 		// Create the adapter that will return a fragment for each of the three
 		// primary sections of the app.
-		mainPagerAdapter = new MainPagerAdapter(getSupportFragmentManager(), getApplicationContext());
+		mainPagerAdapter = new MainPagerAdapter(getSupportFragmentManager(), this);
 
 		// Set up the ViewPager with the sections adapter.
 		mViewPager = (ViewPager) findViewById(R.id.pager);
@@ -64,6 +69,8 @@ public class MainActivity extends FragmentActivity implements ActionBar.TabListe
 			// this tab is selected.
 			actionBar.addTab(actionBar.newTab().setText(mainPagerAdapter.getPageTitle(i)).setTabListener(this));
 		}
+
+		locationManager = (LocationManager) getSystemService(Context.LOCATION_SERVICE);
 	}
 
 	@Override
@@ -90,5 +97,10 @@ public class MainActivity extends FragmentActivity implements ActionBar.TabListe
 	@Override
 	public void onTabReselected(ActionBar.Tab tab, FragmentTransaction fragmentTransaction)
 	{
+	}
+
+	public Location getLocation() {
+		String provider = locationManager.getBestProvider(new Criteria(), false);
+		return locationManager.getLastKnownLocation(provider);
 	}
 }
