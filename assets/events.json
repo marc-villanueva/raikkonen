@@ -17,7 +17,14 @@
 		"name": "Father Joe's Villages Thanksgiving Day 5K",
 		"start": "2013-11-23T00:00:00",
 		"end": "2013-11-23T00:00:00",
-		"description": "Join us and 10,000 of our closest friends and family in Balboa Park for the 12th annual Father Joe’s Villages Thanksgiving Day 5K!",
+		"description": "Join us and 10,000 of our closest friends and family in Balboa Park for the 12th annual Father Joe's Villages Thanksgiving Day 5K!",
+		"image": "http://www.active.com/Assets/Running/Langley+Festival+240x240.jpg"
+	},
+	{
+		"name": "San Diego Puppy Love 5k",
+		"start": "2013-11-24T00:00:00",
+		"end": "2013-11-24T00:00:00",
+		"description": "Helen Woodward Animal Center's 5th Annual Puppy Love 5K Run/Walk challenges you- and your dog- to 'pup-up' and go the extra mile for the animals you love March 16, 2014. We're more than a no-kill shelter. Our programs find homes for orphaned pets, connect therapy animals with people in need, and celebrate the human-animal bond.",
 		"image": "http://www.active.com/Assets/Running/Langley+Festival+240x240.jpg"
 	}	
 ]

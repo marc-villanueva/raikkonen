@@ -12,6 +12,8 @@
         android1:id="@android:id/list"
         android1:layout_width="match_parent"
         android1:layout_height="wrap_content"
+        android:divider="#FFFFFF"
+	    android:dividerHeight="5dp"
          >
     </ListView>
 

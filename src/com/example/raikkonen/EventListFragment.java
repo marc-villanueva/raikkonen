@@ -7,10 +7,9 @@ import android.support.v4.app.ListFragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ArrayAdapter;
-import android.widget.ListAdapter;
 
 import com.example.raikkonen.model.Event;
+import com.example.raikkonen.model.EventListAdapter;
 import com.example.raikkonen.model.EventRepository;
 import com.example.raikkonen.model.SennaClient;
 
@@ -23,12 +22,16 @@ public class EventListFragment extends ListFragment {
 		EventRepository repo = new EventRepository(client);
 		List<Event> events = repo.find(getArguments().getDouble("latitude"), getArguments().getDouble("longitude"));
 
-		ListAdapter myListAdapter = new ArrayAdapter<Event>(
-		    getActivity(),
-		    android.R.layout.simple_list_item_1,
-		    events);
+		EventListAdapter adapter = new EventListAdapter(getActivity(), android.R.layout.simple_list_item_1, events);
+		setListAdapter(adapter);
 
-		setListAdapter(myListAdapter);
+//		ListAdapter myListAdapter = new ArrayAdapter<Event>(
+//		    getActivity(),
+//		    android.R.layout.simple_list_item_1,
+//		    events);
+//
+//		setListAdapter(myListAdapter);
+
 	}
 
 	@Override
